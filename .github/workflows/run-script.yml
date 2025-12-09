@@ -24,3 +24,6 @@ jobs:
 
       - name: Run script
         run: python script.py
+
+      - name: Run script nifty200
+        run: python nifty_200_btst.py
