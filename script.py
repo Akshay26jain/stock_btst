@@ -32,7 +32,6 @@ symbols = [
     "AVANTIFEED.NS","ELGIEQUIP.NS","INDIACEM.NS","VARROC.NS","CARERATING.NS","NYKAA.NS"
     # Add Nifty 200 or any list of stocks you want
 ]
-symbols=["APOLLOTYRE.NS"]
 
 print(f"Loaded {len(symbols)} NSE symbols.\n")
 
