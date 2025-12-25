@@ -5,7 +5,9 @@ from kiteconnect import KiteConnect
 from datetime import datetime, timedelta, time as dtime
 import os
 
-
+print(datetime.now().date())
+print(datetime.now().time())
+print(datetime.now())
 API_KEY = os.environ.get("KITE_API_KEY")
 ACCESS_TOKEN = os.environ.get("KITE_ACCESS_TOKEN")
 
