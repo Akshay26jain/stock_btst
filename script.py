@@ -1,14 +1,15 @@
 import pandas as pd
 import requests
 import yfinance as yf
+import os
 
 # ---------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------
 
 SEND_TELEGRAM = True  # Set True if you want alerts
-BOT_TOKEN = "8578835344:AAHFnHTgi6S4hzhB0C-e_iwQFw302e-G2v8"
-CHAT_ID = "933977274"
+BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 def send_telegram(msg):
     if SEND_TELEGRAM:
