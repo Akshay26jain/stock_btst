@@ -4,10 +4,12 @@ import pandas as pd
 from kiteconnect import KiteConnect
 from datetime import datetime, timedelta, time as dtime
 import os
+from zoneinfo import ZoneInfo
 
-print(datetime.now().date())
-print(datetime.now().time())
-print(datetime.now())
+IST = ZoneInfo("Asia/Kolkata")
+print(datetime.now(IST).date())
+print(datetime.now(IST).time())
+print(datetime.now(IST))
 API_KEY = os.environ.get("KITE_API_KEY")
 ACCESS_TOKEN = os.environ.get("KITE_ACCESS_TOKEN")
 
@@ -49,8 +51,8 @@ def get_tokens(symbols):
 def get_intraday(token):
     data = kite.historical_data(
         instrument_token=token,
-        from_date=datetime.now().date(),
-        to_date=datetime.now(),
+        from_date=datetime.now(IST).date(),
+        to_date=datetime.now(IST),
         interval="5minute"
     )
 
@@ -90,7 +92,7 @@ def wait_for_order_complete(order_id, timeout=20):
     return False
 
 # ================= WAIT FOR 9:35 =================
-while datetime.now().time() < dtime(9, 36):
+while datetime.now(IST).time() < dtime(9, 36):
     time.sleep(5)
 
 # ================= SIGNAL GENERATION =================
