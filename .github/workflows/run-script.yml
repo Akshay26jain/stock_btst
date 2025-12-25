@@ -22,8 +22,11 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: MIS Script
+        run: python mis_morning.py
+
       - name: Run script
         run: python script.py
 
-      - name: Run script nifty200
-        run: python nifty_200_btst.py
+#      - name: Run script nifty200
+#        run: python nifty_200_btst.py
